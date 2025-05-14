@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Checklist - Espaço Festas</title>
+  <title>Checklist - Espaço LIVE OBSERVATORY</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -18,7 +18,7 @@
       margin: auto;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
-    h2 {
+    h2, h1 {
       text-align: center;
       color: #333;
     }
@@ -41,7 +41,7 @@
     button:hover {
       background-color: #218838;
     }
-    input[type="text"], input[type="date"] {
+    input[type="text"], input[type="date"], textarea {
       width: 100%;
       padding: 8px;
       margin-top: 5px;
@@ -51,14 +51,21 @@
 </head>
 <body>
   <div class="card">
-    <h2>Regras de Uso - Espaço Festas</h2>
-    <p>
-      1. O salão deve ser devolvido limpo e organizado.<br>
-      2. As louças devem ser lavadas e guardadas.<br>
-      3. Móveis devem permanecer no local.<br>
-      4. Horário máximo de uso: 22h.<br>
-      5. Danos serão de responsabilidade do morador.
-    </p>
+    <h1>Espaço: <strong>LIVE OBSERVATORY</strong></h1>
+    <p><em>(Capacidade para 30 pessoas)</em></p>
+
+    <p>Na qualidade de condômino(a) do <strong>Condomínio 7th Avenue Live & Work</strong>, comprometo-me e responsabilizo-me pelo seguinte:</p>
+
+    <ol>
+      <li>Utilizar o espaço, meus familiares e convidados de forma a <strong>não perturbar a boa ordem e o sossego</strong> dos demais moradores;</li>
+      <li>Responsabilizar-me por <strong>qualquer dano ao mobiliário</strong>, adornos, aparelhos, cortinas, tapetes e demais objetos do salão durante sua utilização;</li>
+      <li>Cumprir integralmente o <strong>Regulamento Interno</strong> do condomínio referente ao uso do espaço;</li>
+      <li>Declaro que recebi o espaço em <strong>plena ordem</strong> (elétrica, hidráulica, pintura, móveis e objetos), com exceção dos itens abaixo assinalados:</li>
+    </ol>
+
+    <label for="excecoes">📝 Itens com problemas ou exceções:</label>
+    <textarea id="excecoes" name="excecoes" rows="4" placeholder="Descreva aqui, se houver..."></textarea>
+
     <label>
       <input type="checkbox" id="agreeCheckbox"> Li e concordo com as regras
     </label>
@@ -66,26 +73,31 @@
   </div>
 
   <div class="card hidden" id="formulario">
-    <h2>Checklist - Espaço Festas</h2>
+    <h2>Checklist - Espaço LIVE OBSERVATORY</h2>
     <form action="https://formsubmit.co/adm7th@gmail.com" method="POST">
-      <input type="hidden" name="_subject" value="Checklist - Espaço festas">
+      <input type="hidden" name="_subject" value="Checklist - Espaço LIVE OBSERVATORY">
       <input type="hidden" name="_captcha" value="false">
 
       <label>Nome do morador:
         <input type="text" name="nome" required>
       </label>
-
-      <label>Data da verificação:
+	  <label>Numero do APTO:
+        <input type="text" name="nome" required>
+      </label>
+      <label>Data da reserva:
         <input type="date" name="data" required>
       </label>
 
-      <label><input type="checkbox" name="Louças"> Louças em ordem</label>
       <label><input type="checkbox" name="Mesas"> Mesas em ordem</label>
       <label><input type="checkbox" name="Cadeiras"> Cadeiras em ordem</label>
-      <label><input type="checkbox" name="Banheiro"> Banheiro limpo</label>
+      <label><input type="checkbox" name="Banheiro"> Banheiros limpos</label>
       <label><input type="checkbox" name="Piso"> Piso limpo</label>
-      <label><input type="checkbox" name="Lixo"> Lixo descartado</label>
-
+      <label><input type="checkbox" name="Lixo"> Lixeiras com saco</label>
+      <label><input type="checkbox" name="Lixo"> Espelhos limpos</label>
+	  
+	<label for="excecoes">📝 Descreva a baixo os itens que não estão de acordo:</label>
+    <textarea id="excecoes" name="excecoes" rows="4" placeholder="Descreva aqui, se houver..."></textarea>
+	
       <button type="submit">Enviar</button>
     </form>
   </div>
