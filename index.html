@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Checklist - Espaço Festas</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 2rem;
+      background-color: #f8f8f8;
+    }
+    .card {
+      background-color: white;
+      padding: 2rem;
+      border-radius: 12px;
+      max-width: 600px;
+      margin: auto;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h2 {
+      text-align: center;
+      color: #333;
+    }
+    label {
+      display: block;
+      margin-bottom: 10px;
+    }
+    .hidden {
+      display: none;
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px 15px;
+      background-color: #28a745;
+      border: none;
+      border-radius: 6px;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #218838;
+    }
+    input[type="text"], input[type="date"] {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      margin-bottom: 15px;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h2>Regras de Uso - Espaço Festas</h2>
+    <p>
+      1. O salão deve ser devolvido limpo e organizado.<br>
+      2. As louças devem ser lavadas e guardadas.<br>
+      3. Móveis devem permanecer no local.<br>
+      4. Horário máximo de uso: 22h.<br>
+      5. Danos serão de responsabilidade do morador.
+    </p>
+    <label>
+      <input type="checkbox" id="agreeCheckbox"> Li e concordo com as regras
+    </label>
+    <button onclick="mostrarFormulario()">Continuar</button>
+  </div>
+
+  <div class="card hidden" id="formulario">
+    <h2>Checklist - Espaço Festas</h2>
+    <form action="https://formsubmit.co/adm7th@gmail.com" method="POST">
+      <input type="hidden" name="_subject" value="Checklist - Espaço festas">
+      <input type="hidden" name="_captcha" value="false">
+
+      <label>Nome do morador:
+        <input type="text" name="nome" required>
+      </label>
+
+      <label>Data da verificação:
+        <input type="date" name="data" required>
+      </label>
+
+      <label><input type="checkbox" name="Louças"> Louças em ordem</label>
+      <label><input type="checkbox" name="Mesas"> Mesas em ordem</label>
+      <label><input type="checkbox" name="Cadeiras"> Cadeiras em ordem</label>
+      <label><input type="checkbox" name="Banheiro"> Banheiro limpo</label>
+      <label><input type="checkbox" name="Piso"> Piso limpo</label>
+      <label><input type="checkbox" name="Lixo"> Lixo descartado</label>
+
+      <button type="submit">Enviar</button>
+    </form>
+  </div>
+
+  <script>
+    function mostrarFormulario() {
+      const checkbox = document.getElementById('agreeCheckbox');
+      if (checkbox.checked) {
+        document.querySelector('.card').classList.add('hidden');
+        document.getElementById('formulario').classList.remove('hidden');
+      } else {
+        alert('Você deve aceitar as regras para continuar.');
+      }
+    }
+  </script>
+</body>
+</html>
